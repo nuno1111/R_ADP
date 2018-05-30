@@ -34,7 +34,7 @@ text(prune.c, use.n = T)
 plotcp(c)
 
 # 의사결정나무 2번째 예제 {party} ctree() 함수
-install.packages("party")
+# install.packages("party")
 library(party)
 
 data(stagec) # 146명의 전립선 암환자 자료

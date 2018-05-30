@@ -2,7 +2,7 @@
 # 피어슨의 상관계수 = 두 변수간의 선형관계
 # 스피어만의 상관계수 = 두 변수간의 선형관계 이외
 
-install.packages("Hmisc")
+# install.packages("Hmisc")
 library(Hmisc)
 data(mtcars)
 head(mtcars)

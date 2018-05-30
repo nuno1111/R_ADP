@@ -17,7 +17,7 @@
 #  - 독립성 : 잔차와 독립변수의 값이 관련 있지 않음
 #  - 등분산성 : 독립변수의 모든 값에 대해 오차들의 분산이 일정
 #  - 비상관성 : 관측치들의 잔차들끼리 상관이 없어야 함
-#  - 정상성 : 잔차하잉 정규분포를 이뤄야함
+#  - 정상성 : 잔차는 정규분포를 이뤄야함
 
 # 단순회귀분석
 set.seed(2)
@@ -30,7 +30,9 @@ dfrm=data.frame(x,y)
 dfrm
 plot(dfrm)
 
-lm(y~x, data = dfrm)
+lm_1 <- lm(y~x, data = dfrm)
+summary(lm_1)
+plot(lm_1)
 
 # 다중회귀분석
 set.seed(2)
@@ -51,7 +53,7 @@ plot(m)
 summary(m) # p 값이 0.05이하이므로 유의미, 결정계수도 1이므로 유의
 
 # 식이요법 방법 적용한 닭 데이터 / 단순회귀분석
-install.packages("MASS")
+# install.packages("MASS")
 library(MASS)
 head(ChickWeight)
 summary(ChickWeight)
@@ -59,12 +61,17 @@ class(ChickWeight)
 
 Chick <- ChickWeight[ChickWeight$Chick==1,]
 Chick
+plot(Chick)
 
 ChickLM<-lm(weight~Time, data=Chick)
 summary(ChickLM)
-
 plot(Chick$Time,Chick$weight)
 plot(ChickLM)
+
+Chick$Time2 <- Chick$Time ^ 2
+ChickLM2<-lm(weight~Time2 + Time, data=Chick)
+summary(ChickLM2)
+plot(ChickLM2)
 
 # CARS 데이터를 활용한 다항회귀분석
 data(cars)

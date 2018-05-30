@@ -114,7 +114,7 @@ head(testData)
 
 
 # ROC 그래프를 그리기 위한 {Epi} R 패키지 ROC() 함수
-install.packages("Epi")
+# install.packages("Epi")
 library(Epi)
 neural_ROC <- ROC(form = case ~ net_pred, data=testData, plot="ROC")
 
@@ -125,7 +125,7 @@ dtree_ROC <- ROC(form = case ~ dt_pred, data=testData, plot="ROC")
 #              해당 등급에 따라 계산된 이익값을 누적으로 연결한 도표
 # 향상도곡선 : 랜덤모델과 비교하여 해당 모델의 성과가 얼마나 향상되었는지를 각 등급별로 파악하는 그래프
 
-install.packages("ROCR")
+# install.packages("ROCR")
 library(ROCR)              
 
 n_r <- prediction(testData$net_pred, testData$case)

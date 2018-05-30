@@ -218,6 +218,7 @@ plot(wine.som, "mapping", bg = rgb(colour3))
 
 par(mfrow = c(1,2))
 
+
 dists <- unit.distances(wine.som$grid, toroidal = FALSE)
 plot(wine.som, 
      type="property", 
@@ -274,3 +275,4 @@ wines.sc$clusterY <- wine.som$grid$pts[wine.som$unit.classif, "y"]
 
 p <- ggplot(wines.sc, aes(clusterX,clusterY))
 p + geom_jitter(position = position_jitter(width = 0.4, height = 0.3))
+

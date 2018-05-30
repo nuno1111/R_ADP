@@ -67,7 +67,7 @@ pacf(Nile.diff2, lag.max=20)
 pacf(Nile.diff2, lag.max=20, plot = FALSE)
 
 # ARIMA 모형 선택은 어려워... 그래서... forecast 패키지에 auto.arima로 모형결정
-install.packages("forecast")
+# install.packages("forecast")
 library(forecast)
 
 auto.arima(Nile) # auto.arima로 적절한 모형은 ARIMA(1,1,1) 으로 결정
